@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F5F5F5">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <TextView
+            style="@style/SectionLabel"
+            android:layout_marginTop="0dp"
+            android:text="Destination" />
+
+        <EditText
+            android:id="@+id/etDestination"
+            style="@style/InputField"
+            android:hint="e.g., Paris, France" />
+
+        <TextView
+            style="@style/SectionLabel"
+            android:text="Start Date" />
+
+        <EditText
+            android:id="@+id/etStartDate"
+            style="@style/InputField"
+            android:hint="Select start date"
+            android:focusable="false"
+            android:clickable="true"
+            android:drawableEnd="@android:drawable/ic_menu_my_calendar" />
+
+        <TextView
+            style="@style/SectionLabel"
+            android:text="End Date" />
+
+        <EditText
+            android:id="@+id/etEndDate"
+            style="@style/InputField"
+            android:hint="Select end date"
+            android:focusable="false"
+            android:clickable="true"
+            android:drawableEnd="@android:drawable/ic_menu_my_calendar" />
+
+        <TextView
+            style="@style/SectionLabel"
+            android:text="Budget" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="8dp">
+
+            <Button
+                android:id="@+id/btnLowBudget"
+                style="@style/BudgetButton"
+                android:text="Low" />
+
+            <Button
+                android:id="@+id/btnMediumBudget"
+                style="@style/BudgetButton"
+                android:text="Medium" />
+
+            <Button
+                android:id="@+id/btnHighBudget"
+                style="@style/BudgetButton"
+                android:text="High" />
+
+        </LinearLayout>
+
+        <TextView
+            style="@style/SectionLabel"
+            android:text="Activities" />
+
+        <CheckBox
+            android:id="@+id/cbHiking"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Hiking"
+            android:textSize="14sp"
+            android:layout_marginTop="8dp" />
+
+        <CheckBox
+            android:id="@+id/cbSwimming"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Swimming"
+            android:textSize="14sp" />
+
+        <CheckBox
+            android:id="@+id/cbSightseeing"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Sightseeing"
+            android:textSize="14sp" />
+
+        <CheckBox
+            android:id="@+id/cbCompleted"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Trip Completed"
+            android:textSize="14sp"
+            android:layout_marginTop="16dp" />
+
+        <TextView
+            style="@style/SectionLabel"
+            android:text="Notes" />
+
+        <EditText
+            android:id="@+id/etNotes"
+            style="@style/InputField"
+            android:layout_height="100dp"
+            android:hint="Add any notes here..."
+            android:gravity="top" />
+
+        <Button
+            android:id="@+id/btnSave"
+            style="@style/PrimaryButton"
+            android:text="Save Trip"
+            android:layout_marginTop="24dp" />
+
+    </LinearLayout>
+
+</ScrollView>

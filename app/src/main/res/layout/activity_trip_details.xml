@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F5F5F5">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:elevation="4dp"
+            android:radius="8dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <TextView
+                    android:id="@+id/tvDestinationDetails"
+                    style="@style/TitleText"
+                    android:text="Paris, France" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="#E0E0E0"
+                    android:layout_marginTop="12dp"
+                    android:layout_marginBottom="12dp" />
+
+                <TextView
+                    android:id="@+id/tvStartDateDetails"
+                    style="@style/DetailText"
+                    android:text="Start: 01/01/2024" />
+
+                <TextView
+                    android:id="@+id/tvEndDateDetails"
+                    style="@style/DetailText"
+                    android:text="End: 10/01/2024" />
+
+                <TextView
+                    android:id="@+id/tvBudgetDetails"
+                    style="@style/DetailText"
+                    android:text="Budget: Medium" />
+
+                <TextView
+                    android:id="@+id/tvActivitiesDetails"
+                    style="@style/DetailText"
+                    android:text="Activities: Hiking, Swimming" />
+
+                <TextView
+                    android:id="@+id/tvStatusDetails"
+                    style="@style/DetailText"
+                    android:textStyle="bold"
+                    android:textColor="#4CAF50"
+                    android:layout_marginTop="12dp"
+                    android:text="Status: Completed" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="#E0E0E0"
+                    android:layout_marginTop="12dp"
+                    android:layout_marginBottom="12dp" />
+
+                <TextView
+                    android:id="@+id/tvNotesDetails"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="14sp"
+                    android:textColor="#666666"
+                    android:layout_marginTop="8dp"
+                    android:text="Notes: Visit Eiffel Tower" />
+
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <Button
+            android:id="@+id/btnEdit"
+            style="@style/PrimaryButton"
+            android:text="Edit Trip" />
+
+    </LinearLayout>
+
+</ScrollView>
