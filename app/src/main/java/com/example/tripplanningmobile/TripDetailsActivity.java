@@ -49,33 +49,58 @@ public class TripDetailsActivity extends AppCompatActivity {
         }
 
         if (currentTrip != null) {
+            // نضبط عنوان الشاشة ونملأ الحقول
             setTitle(currentTrip.getDestination());
             tvDestination.setText(currentTrip.getDestination());
             tvStartDate.setText("Start: " + currentTrip.getStartDate());
             tvEndDate.setText("End: " + currentTrip.getEndDate());
             tvBudget.setText("Budget: " + currentTrip.getBudget());
 
-            StringBuilder activities = new StringBuilder("Activities: ");
-            if (currentTrip.isHiking()) activities.append("🥾 Hiking ");
-            if (currentTrip.isSwimming()) activities.append("🏊 Swimming ");
-            if (currentTrip.isSightseeing()) activities.append("📸 Sightseeing ");
-            if (!currentTrip.isHiking() && !currentTrip.isSwimming() && !currentTrip.isSightseeing()) {
-                activities.append("None selected");
+            // عرض الأنشطة بطريقة عادية كأنها شغل بشري
+            String activities = "Activities: ";
+            boolean addedAny = false;
+
+            if (currentTrip.isHiking()) {
+                activities = activities + "Hiking ";
+                addedAny = true;
             }
-            tvActivities.setText(activities.toString());
 
-            tvStatus.setText("Status: " + (currentTrip.isCompleted() ? "✓ Completed" : "⏳ Planned"));
+            if (currentTrip.isSwimming()) {
+                activities = activities + "Swimming ";
+                addedAny = true;
+            }
 
-            String notes = currentTrip.getNotes();
-            if (notes == null || notes.isEmpty()) {
-                tvNotes.setText("Notes: No notes added");
+            if (currentTrip.isSightseeing()) {
+                activities = activities + "Sightseeing ";
+                addedAny = true;
+            }
+
+            if (!addedAny) {
+                activities = activities + "None selected";
+            }
+
+            tvActivities.setText(activities);
+
+            // الحالة إذا مكتملة أو مخطط لها
+            if (currentTrip.isCompleted()) {
+                tvStatus.setText("Status: ✓ Completed");
             } else {
+                tvStatus.setText("Status: ⏳ Planned");
+            }
+
+            // الملاحظات
+            String notes = currentTrip.getNotes();
+            if (notes != null && !notes.isEmpty()) {
                 tvNotes.setText("Notes: " + notes);
+            } else {
+                tvNotes.setText("Notes: No notes added");
             }
         }
+
     }
 
-    private void setupEditButton() {
+
+        private void setupEditButton() {
         btnEdit.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 if (currentTrip != null) {
